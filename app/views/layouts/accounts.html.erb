@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>xpressbittrade  || Online  Account </title>
+    <%= csrf_meta_tags %>
+    <meta name="description" content="Invest and reap rewards from  our investment mechanism created by the best proffessionals in the field"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= stylesheet_link_tag    'accounts', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'accounts', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="wrapper">
+  <%= render "shared/sidebar" %>
+      <%= render "shared/headermenu" %>
+
+      <% if notice %>
+      <div class="col-md-8 col-md-offset-2">
+
+
+      <div class="alert alert-info alert-with-icon" data-notify="container">
+                                    <button type="button" aria-hidden="true" class="close">×</button>
+                                    <span data-notify="icon" class="ti-bell"></span>
+                                    <span data-notify="message"><%= notice %>.</span>
+                                </div>
+                              </div>
+                                <% end %>
+
+    <%= yield %>
+
+      </div>
+    </div>
+    <script>
+  (function(b,i,t,C,O,I,N) {
+    window.addEventListener('load',function() {
+      if(b.getElementById(C))return;
+      I=b.createElement(i),N=b.getElementsByTagName(i)[0];
+      I.src=t;I.id=C;N.parentNode.insertBefore(I, N);
+    },false)
+  })(document,'script','https://widgets.bitcoin.com/widget.js','btcwdgt');
+</script>
+  </body>
+  </html>

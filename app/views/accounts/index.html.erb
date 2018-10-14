@@ -1,0 +1,127 @@
+<div class="content">
+    <div class="container-fluid">
+      <% if Deposit.where(user_id: current_user.id).exists?%>
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+              <div class="card">
+                  <div class="content">
+                      <div class="row">
+                          <div class="col-xs-5">
+                              <div class="icon-big icon-success text-center">
+                                  <i class="ti-wallet"></i>
+                              </div>
+                          </div>
+                          <div class="col-xs-7">
+                              <div class="numbers">
+                                  <p>Revenue</p>
+                                <% @accounts.take(1).each do |a| %>
+
+                                  $<%= a.balance %>
+                                  <% end %>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+              <div class="card">
+                  <div class="content">
+                      <div class="row">
+                          <div class="col-xs-5">
+                              <div class="icon-big icon-danger text-center">
+                                  <i class="ti-pulse"></i>
+                              </div>
+                          </div>
+                          <div class="col-xs-7">
+                              <div class="numbers">
+                                  <p>Trades</p>
+                                  <%= Trade.where(user_id: current_user.id).count %>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+              <div class="card">
+                  <div class="content">
+                      <div class="row">
+                          <div class="col-xs-5">
+                              <div class="icon-big icon-success text-center">
+                                  <i class="ti-credit-card"></i>
+                              </div>
+                          </div>
+                          <div class="col-xs-7">
+                              <div class="numbers">
+                                  <p>Deposit</p>
+                                  <%= Deposit.where(user_id: current_user.id).count %>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+              <div class="card">
+                  <div class="content">
+                      <div class="row">
+                          <div class="col-xs-5">
+                              <div class="icon-big icon-danger text-center">
+                                  <i class="ti-money"></i>
+                              </div>
+                          </div>
+                          <div class="col-xs-7">
+                              <div class="numbers">
+                                  <p>Withdrawals</p>
+                                  <%= Withdraw.where(user_id: current_user.id).count %>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+              <div class="row">
+                <div class="col-md-12 embed-responsive embed-responsive-16by9">
+
+                  <div style="width:100%; max-width:100% !important;" class="btcwdgt-chart"></div>
+
+
+          </div>
+              </div>
+
+            </div>
+          </div>
+      </div>
+     <% else %>
+     <div class="row" style="margin-top:50px;">
+       <div class="col-md-8 col-md-offset-2">
+
+
+       <div class="card">
+         <div class="image">
+           <%= image_tag "home7-slider-img-1.jpg", class: "img-fluid" %>
+         </div>
+         <div class="content">
+           <div class="header text-center">
+               <h4 class="title">Start your making life easier</h4>
+               <br />
+             <%= link_to "Start by making a deposit", new_deposit_path, class: "btn btn-primary text-center"%>
+</div>
+         </div>
+
+       </div>
+     </div>
+      </div>
+<% end %>
+
+    </div>
+</div>

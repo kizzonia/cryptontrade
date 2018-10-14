@@ -1,0 +1,50 @@
+<!-- PAGE HEADER -->
+<section class="trd-page-header">
+    <div class="container">
+        <div class="row">
+            <h1 class="trd-page-title"><%= @faq.title %></h1>
+        </div>
+    </div>
+</section>
+<!-- PAGE HEADER END -->
+
+<!-- PAGE CONTENTS -->
+<section class="trd-page-contents-wrapper">
+    <div class="container">
+        <div class="row">
+
+            <!-- Page Contents -->
+            <div class="trd-page-contents col-md-12 col-sm-12 col-xs-12">
+
+                <!-- Post title -->
+                <div class="trd-post-header-meta">
+                    <h1 class="trd-post-title"><%= @faq.title %></h1>
+                    <ul class="trd-post-meta">
+
+                    </ul>
+                </div>
+                <!-- End -->
+
+                <!-- Featured Image -->
+
+                <!-- End  -->
+
+                <!-- Post Details -->
+                <div class="trd-post-details trd trd-inner-section">
+                    <p>
+                      <%= raw(@faq.body) %>
+                    </p>
+
+
+                </div>
+                <!-- End -->
+
+                <!-- POST METAS -->
+                <div class="trd-post-tags-wrapper trd trd-inner-section">
+                    <a href="#" class="trd-post-tags">finance</a>
+                    <a href="#" class="trd-post-tags">marketing</a>
+                </div>
+                <!-- END -->
+              </div>
+            </div>
+          </section>

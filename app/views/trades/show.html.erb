@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @trade.user_id %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @trade.currency %>
+</p>
+
+<p>
+  <strong>Deposit:</strong>
+  <%= @trade.deposit %>
+</p>
+
+<p>
+  <strong>Expiration:</strong>
+  <%= @trade.expiration %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @trade.status %>
+</p>
+
+<p>
+  <strong>Tradetype:</strong>
+  <%= @trade.tradetype %>
+</p>
+
+<p>
+  <strong>Entry:</strong>
+  <%= @trade.entry %>
+</p>
+
+<p>
+  <strong>Rate:</strong>
+  <%= @trade.rate %>
+</p>
+
+<p>
+  <strong>Return:</strong>
+  <%= @trade.return %>
+</p>
+
+<%= link_to 'Edit', edit_trade_path(@trade) %> |
+<%= link_to 'Back', trades_path %>

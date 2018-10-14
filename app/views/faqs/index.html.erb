@@ -1,0 +1,39 @@
+<section class="trd-page-header">
+    <div class="container">
+        <div class="row">
+            <h1 class="trd-page-title">FAQ's</h1>
+        </div>
+    </div>
+</section>
+<!-- PAGE HEADER END -->
+
+<!-- PAGE CONTENTS -->
+<section class="trd-page-contents-wrapper">
+    <div class="container">
+        <div class="row">
+
+            <!-- Page Contents -->
+            <div class="trd-page-contents">
+                <div class="trd-blog-post-wrapper">
+
+                  <% @faqs.each do |f| %>
+                    <!-- BLOG ITEMS -->
+                    <div class="trd-blog-posts col-md-4 col-sm-4 col-xs-12">
+                        <div class="trd-post-img-wrapper">
+
+                        </div>
+
+                        <div class="trd-post-excerpts">
+                            <h3>
+                              <%= link_to f.title, f %>
+                            </h3>
+
+                        </div>
+                    </div>
+                    <!-- BLOG ITEMS END -->
+                    <% end %>
+
+        </div>
+    </div>
+</section>
+<!-- PAGE CONTENTS END -->

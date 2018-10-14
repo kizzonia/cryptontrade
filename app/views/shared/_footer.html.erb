@@ -1,0 +1,94 @@
+<footer>
+    <div class="container">
+        <div class="row">
+            <!-- Footer Top -->
+            <div class="trd-footer-top">
+                <!-- About Widget -->
+                <div class="col-md-3 col-sm-6 col-xs-12 trd-footer-widget trd-about-widget">
+  <!-- About Widget
+                  <div class="trd-logo-wrapper">
+                      <%= image_tag "nunu-footer.png"  %>
+                  </div>   About Widget -->
+                    <p>Lets Make Money For You</p>
+                </div>
+                <!-- End -->
+
+                <!-- Useful Link Widget -->
+                <div class="col-md-3 col-sm-6 col-xs-12 trd-footer-widget trd-useful-link-widget">
+                    <h3 class="trd-footer-widget-title">Useful Link</h3>
+
+                    <div class="trd-footer-widget-content">
+                        <ul>
+                          <li c>
+                            <%= link_to "Home", root_path %>
+                          </li>
+                          <li>
+                            <%= link_to "Abouts", page_path('about') %>
+                          </li>
+
+                          <li>
+                              <%= link_to "FAQ's", faqs_path  %>
+
+                          </li>
+                          <li>
+                              <a href="contact-us.html">Contact</a>
+                          </li>
+                          <li><%= link_to new_user_registration_path do %>
+                              <i class="fa fa-user"> Login/SignUp</i>
+                          <%end%> </li>
+                    </div>
+                </div>
+                <!-- End -->
+
+
+                <!-- Subscribe For Widget -->
+                <div class="col-md-3 col-sm-6 col-xs-12 trd-footer-widget trd-subscribe-widget">
+                    <h3 class="trd-footer-widget-title">Subscribe</h3>
+
+                    <div class="trd-footer-widget-content">
+                        <p>We Dont Disturb Much</p>
+
+                        <form action="#">
+                            <input type="email" name="trd-subscription" id="trd-subscription" placeholder="Your email">
+                            <button type="submit" class="trd-btn">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- End -->
+            </div>
+            <!-- End -->
+
+            <!-- Footer Bottom -->
+            <div class="trd-footer-bottom">
+                <div class="trd-footer-menu">
+                    <ul>
+                      <li class="active">
+                        <%= link_to "Home", root_path %>
+                      </li>
+                      <li>
+                        <%= link_to "Abouts", page_path('about') %>
+                      </li>
+
+                      <li>
+                          <%= link_to "FAQ's", faqs_path  %>
+
+                      </li>
+                      <li>
+                          <a href="contact-us.html">Contact</a>
+                      </li>
+                      <li><%= link_to new_user_registration_path do %>
+                          <i class="fa fa-user"> Login/SignUp</i>
+                      <%end%> </li>
+                    </ul>
+                </div>
+
+                <div class="trd-copyright-info">
+                    <p>Copyright cryptontrade &copy; 2016 &copy;</p>
+                </div>
+            </div>
+            <!-- End -->
+        </div>
+    </div>
+    <!-- End -->
+</footer>
+<!-- FOOTER END -->

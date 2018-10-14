@@ -1,0 +1,64 @@
+<%= render "shared/banner" %>
+<!-- CONTACT SECTION -->
+<div class="trd-contact-section trd-gray-section trd-section">
+    <div class="container">
+        <div class="row">
+            <div class="trd-custom-testimonial-wrapper trade-same-height">
+                <div id="trd-custom-testimonial" class="trd-custom-testimonial">
+                    <!-- Slides -->
+                    <div class="trd-custom-testimonial-slides">
+                        <div class="trd-testimonial-text">
+                            <p>Best interactive trading platform ever  <span class="trd-highlight-text">seen</span> design can bring good sectors. Great idea</p>
+                        </div>
+
+                        <div class="trd-satisfied-user-info">
+                            <h3>Adrian Smith</h3>
+                        </div>
+                    </div>
+                    <!-- End -->
+
+                     <!-- Slides -->
+                    <div class="trd-custom-testimonial-slides">
+                        <div class="trd-testimonial-text">
+                            <p>I am really satisfied by their work it  <span class="trd-highlight-text">gives</span> access to diffrent tade without trading knowledge</p>
+                        </div>
+
+                        <div class="trd-satisfied-user-info">
+                            <h3>Juliana dickkens</h3>
+                        </div>
+                    </div>
+                    <!-- End -->
+
+                     <!-- Slides -->
+                    <div class="trd-custom-testimonial-slides">
+                        <div class="trd-testimonial-text">
+                            <p>Thanks xpressbittrade i was able to pay off <span class="trd-highlight-text">my</span>morgage</p>
+                        </div>
+
+                        <div class="trd-satisfied-user-info">
+                            <h3>Adrian</h3>
+                        </div>
+                    </div>
+                    <!-- End -->
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="trd-contact-form-sec trade-same-height">
+                <h1 class="trd-section-tittle">Stay <span class="trd-highlight-text">Connected</span></h1>
+
+                <div class="trd-contact-form-wrapper">
+                  <%= simple_form_for(@home, :url =>home_index_path) do |f| %>
+                            <%= f.error_notification %>
+                        <%= f.input :name, id: 'trd-name' %>
+                        <%= f.input :email, id: 'trd-email', required: true %>
+                        <%= f.input :message, id: 'trd-message', as: :text, rows: "7", cols: "30" %>
+                        <%= f.submit :submit, class: "btn btn-success btt", label: "Send Message" %>
+                      <% end %>
+                </div>
+            </div>
+            <!-- End -->
+        </div>
+    </div>
+</div>
+<!-- CONTACT SECTION END -->

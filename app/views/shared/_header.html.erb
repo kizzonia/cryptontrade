@@ -1,0 +1,109 @@
+<header class="trd-header">
+    <!-- Topbar -->
+    <div class="trd-header-topbar">
+        <div class="container">
+            <div class="row">
+                <!-- contact info -->
+                <div class="trd-contact-infos">
+                    <ul>
+                        <li class="trd-header-info-phn">+1 (309) 240-6187</li>
+                        <li class="trd-header-info-location">Los Angeles, California</li>
+                        <li class="trd-header-info-lang">
+                            <select class="trd-multilang-opt">
+                                <option value="Eng">English</option>
+                                <option value="Spn">Spanish</option>
+                                <option value="Ger">German</option>
+                                <option value="Rus">Russian</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End -->
+
+                <!-- Social Links -->
+                <div class="trd-social-links">
+                    <ul>
+                        <li class="trd-fb-icon">
+                            <a href="#">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="trd-twitter-icon">
+                            <a href="#">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- End -->
+            </div>
+        </div>
+    </div>
+    <!-- End -->
+
+    <!-- Bottombar -->
+    <div class="trd-header-bottombar">
+        <!-- Navigation Menu start-->
+        <nav class="navbar trd-main-menu" role="navigation">
+          <div class="container">
+            <div class="row">
+              <!-- Navbar Toggle -->
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+
+                  <!-- Logo -->
+                  <%= link_to root_path, class: "navbar-brand" do %>Cryptontrade <%end%>
+              </div>
+              <!-- Navbar Toggle End -->
+
+                <!-- navbar-collapse start-->
+                <div id="nav-menu" class="navbar-collapse trd-menu-wrapper collapse" role="navigation">
+                    <!-- Menu -->
+                    <ul class="nav navbar-nav trd-menus">
+                        <li class="active">
+                          <%= link_to "Home", root_path %>
+                        </li>
+                        <li>
+                          <%= link_to "About Us", page_path('about') %>
+                        </li>
+                        <li>
+                          <a href="#">Knowledge Base</a>
+                          <ul class="trd-dropdown-menu">
+                            <li>
+                              <%= link_to "How It Works", page_path("How-it-works") %>
+                            </li>
+                            <li>
+                              <%= link_to "Open A Bitcoin Wallet", page_path("bitcoin") %>
+                            </li>
+                            <li>
+                                <%= link_to "FAQ's", faqs_path  %>
+
+                            </li>
+                          </ul>
+                        </li>
+
+                        <li><%= link_to new_user_session_path do %>
+                            <i class="fa fa-user"> Login</i>
+                        <%end%> </li>
+                        <li><%= link_to new_user_registration_path do %>
+                            <i class="fa fa-user"> SignUp</i>
+                        <%end%> </li>
+                    </ul>
+                    <!-- End -->
+                </div>
+                <!-- navbar-collapse end-->
+
+
+            </div>
+          </div>
+        </nav>
+        <!-- Navigation Menu end-->
+    </div>
+    <!-- End -->
+</header>
+<!-- HEADER END -->

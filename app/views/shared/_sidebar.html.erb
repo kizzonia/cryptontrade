@@ -1,0 +1,56 @@
+<div class="sidebar" >
+
+<!--
+Tip 1: you can change the color of the sidebar's background using: data-background-color="white | black"
+Tip 2: you can change the color of the active button using the data-active-color="primary | info | success | warning | danger"
+-->
+
+  <div class="sidebar-wrapper">
+        <div class="logo">
+            <%= current_user.email %>
+        </div>
+
+        <ul class="nav">
+            <li class="active">
+                <%= link_to accounts_path do %>
+                    <i class="ti-panel"></i>
+                    <p>Account</p>
+                <% end %>
+            </li>
+            <li>
+              <%= link_to edit_user_registration_path do %>
+                    <i class="ti-user"></i>
+                    <p>Account Profile</p>
+                <% end %>
+            </li>
+            <li>
+                <%= link_to trades_path do %>
+                    <i class="ti-pulse"></i>
+                    <p>Trade History </p>
+                <% end %>
+            </li>
+            <li>
+                <%= link_to new_deposit_path do %>
+                    <i class="ti-credit-card"></i>
+                    <p>Deposits</p>
+                <% end %>
+            </li>
+            <li>
+              <%= link_to new_withdraw_path do %>
+                    <i class="ti-money"></i>
+                    <p>Withdrawal</p>
+                <% end %>
+            </li>
+
+
+            <li>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+
+                    <i class="ti-arrow-left"></i>
+                    <p>Sign-out</p>
+                </a>
+            <% end %>
+
+        </ul>
+  </div>
+</div>
