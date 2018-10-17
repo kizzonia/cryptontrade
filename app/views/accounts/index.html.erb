@@ -1,6 +1,6 @@
 <div class="content">
     <div class="container-fluid">
-      <% if Deposit.where(user_id: current_user.id).exists?%>
+      <% if Account.where(user_id: current_user.id).exists?%>
         <div class="row">
           <div class="col-lg-3 col-sm-6">
               <div class="card">
@@ -21,7 +21,12 @@
                               </div>
                           </div>
                       </div>
-
+                      <div class="footer">
+                          <hr />
+                          <div class="stats">
+                              <i class="ti-reload"></i> Updated now
+                          </div>
+                      </div>
                   </div>
               </div>
           </div>
@@ -41,7 +46,12 @@
                               </div>
                           </div>
                       </div>
-
+                      <div class="footer">
+                          <hr />
+                          <div class="stats">
+                              <i class="ti-reload"></i> Updated now
+                          </div>
+                      </div>
                   </div>
               </div>
           </div>
@@ -58,7 +68,17 @@
                               <div class="numbers">
                                   <p>Deposit</p>
                                   <%= Deposit.where(user_id: current_user.id).count %>
+
                               </div>
+                          </div>
+
+                      </div>
+                      <div class="footer">
+                          <hr />
+                          <div class="stats">
+                             <%= link_to new_deposit_path, class: "btn btn-primary" do %>
+                                Make a Deposit
+                                <%end%>
                           </div>
                       </div>
 
@@ -79,6 +99,14 @@
                                   <p>Withdrawals</p>
                                   <%= Withdraw.where(user_id: current_user.id).count %>
                               </div>
+                          </div>
+                      </div>
+                      <div class="footer">
+                          <hr />
+                          <div class="stats">
+                            <%= link_to new_withdraw_path, class: "btn btn-primary" do %>
+                               Withdraw Funds 
+                               <%end%>
                           </div>
                       </div>
 
@@ -114,7 +142,7 @@
            <div class="header text-center">
                <h4 class="title">Start your making life easier</h4>
                <br />
-             <%= link_to "Start by making a deposit", new_deposit_path, class: "btn btn-primary text-center"%>
+             <%= link_to "Create Your Trading Account", new_account_path, class: "btn btn-primary text-center"%>
 </div>
          </div>
 

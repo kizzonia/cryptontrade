@@ -4,7 +4,6 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :plan, as: :select, :collection => ["Bronze", "Silver", "Gold", "Platinum"], class: "form-control border-input "  %>
     <%= f.input :amount, placeholder: "$5000", class: "form-control border-input" %>
     <%= f.input :payment_type, as: :select, :collection => [ "Bank Transfer", "Moneygram", "Western Union", "Bitcoin", "Ria", "Skrill"], class: "form-control border-input "  %>
     <%= f.input :email, class: "form-control border-input" %>

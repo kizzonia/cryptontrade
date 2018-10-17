@@ -1,7 +1,7 @@
 class DepositsController < InheritedResources::Base
   layout "accounts"
   before_action :authenticate_user!
-  before_action :set_deposit, only: [:show, :edit, :update, :destroy]
+  before_action :set_deposits, only: [:show, :edit, :update, :destroy]
 
   def index
     @deposits = Deposit.where(user_id: current_user).order('created_at DESC')
@@ -22,7 +22,7 @@ class DepositsController < InheritedResources::Base
         user = User.find_by_id(@deposit.user_id)
         deposit = @deposit
         DepositMailer.deposit_email(user, deposit).deliver
-        format.html { redirect_to root_path, notice: 'We have received your deposit request we will contact you soon.' }
+        format.html { redirect_to @deposit, notice: 'We have received your deposit request we will contact you soon.' }
         format.json { render :show, status: :created, location: @deposit }
       else
         format.html { render :new }

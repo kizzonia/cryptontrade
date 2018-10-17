@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :withdraws
   resources :trades
   resources :deposits
-  resources :accounts, only: [:index]
+  resources :accounts
   resources :pages, only: [:show]
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
