@@ -13,11 +13,61 @@
                           </div>
                           <div class="col-xs-7">
                               <div class="numbers">
-                                  <p>Revenue</p>
+                                  <p>Account Balance</p>
                                 <% @accounts.take(1).each do |a| %>
 
                                   $<%= a.balance %>
-                                  <% end %>
+
+                              </div>
+                          </div>
+                      </div>
+                      <div class="footer">
+                          <hr />
+                          <div class="stats">
+                              <i class="ti-reload"></i> Updated now
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+              <div class="card">
+                  <div class="content">
+                      <div class="row">
+                          <div class="col-xs-5">
+                              <div class="icon-big icon-danger text-center">
+                                  <i class="ti-bar-chart"></i>
+                              </div>
+                          </div>
+                          <div class="col-xs-7">
+                              <div class="numbers">
+                                  <p>Capital</p>
+                                  $<%= a.capital %>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="footer">
+                          <hr />
+                          <div class="stats">
+                              <i class="ti-reload"></i> Updated now
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+              <div class="card">
+                  <div class="content">
+                      <div class="row">
+                          <div class="col-xs-5">
+                              <div class="icon-big icon-danger text-center">
+                                  <i class="ti-anchor"></i>
+                              </div>
+                          </div>
+                          <div class="col-xs-7">
+                              <div class="numbers">
+                                  <p>Capital Guranted</p>
+                                  <%= a.guranted %>%
                               </div>
                           </div>
                       </div>
@@ -41,8 +91,8 @@
                           </div>
                           <div class="col-xs-7">
                               <div class="numbers">
-                                  <p>Trades</p>
-                                  <%= Trade.where(user_id: current_user.id).count %>
+                                  <p>Gross profit/loss</p>
+                                $  <%= a.gross_pl %>
                               </div>
                           </div>
                       </div>
@@ -60,13 +110,64 @@
                   <div class="content">
                       <div class="row">
                           <div class="col-xs-5">
+                              <div class="icon-big icon-danger text-center">
+                                  <i class="ti-stats-down"></i>
+                              </div>
+                          </div>
+                          <div class="col-xs-7">
+                              <div class="numbers">
+                                  <p>Net profit/loss</p>
+                                $<%= a.net_pl %>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="footer">
+                          <hr />
+                          <div class="stats">
+                              <i class="ti-reload"></i> Updated now
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+              <div class="card">
+                  <div class="content">
+                      <div class="row">
+                          <div class="col-xs-5">
+                              <div class="icon-big icon-danger text-center">
+                                  <i class="ti-pulse"></i>
+                              </div>
+                          </div>
+                          <div class="col-xs-7">
+                              <div class="numbers">
+                                  <p>ROI</p>
+                                  <%= a.roi %>%
+                              </div>
+                          </div>
+                      </div>
+                      <div class="footer">
+                          <hr />
+                          <div class="stats">
+                              <i class="ti-reload"></i> Updated now
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <%end%>
+          <div class="col-lg-3 col-sm-6">
+              <div class="card">
+                  <div class="content">
+                      <div class="row">
+                          <div class="col-xs-5">
                               <div class="icon-big icon-success text-center">
                                   <i class="ti-credit-card"></i>
                               </div>
                           </div>
                           <div class="col-xs-7">
                               <div class="numbers">
-                                  <p>Deposit</p>
+                                  <p>Deposits</p>
                                   <%= Deposit.where(user_id: current_user.id).count %>
 
                               </div>
@@ -105,7 +206,7 @@
                           <hr />
                           <div class="stats">
                             <%= link_to new_withdraw_path, class: "btn btn-primary" do %>
-                               Withdraw Funds 
+                               Withdraw Funds
                                <%end%>
                           </div>
                       </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181017205112) do
+ActiveRecord::Schema.define(version: 20181023150526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,11 @@ ActiveRecord::Schema.define(version: 20181017205112) do
     t.datetime "updated_at", null: false
     t.string "address"
     t.string "slug"
+    t.string "capital"
+    t.string "guranted"
+    t.string "gross_pl"
+    t.string "roi"
+    t.string "net_pl"
     t.index ["slug"], name: "index_accounts_on_slug", unique: true
   end
 
@@ -125,6 +130,9 @@ ActiveRecord::Schema.define(version: 20181017205112) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "bankName"
+    t.string "accountNumber"
+    t.string "routineNumber"
     t.index ["user_id"], name: "index_withdraws_on_user_id"
   end
 
