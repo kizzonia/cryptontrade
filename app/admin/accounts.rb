@@ -11,7 +11,6 @@ ActiveAdmin.register Account do
       f.input :capital
       f.input :roi
       f.input :balance
-
       f.input :guranted
       f.input :gross_pl
       f.input :net_pl
