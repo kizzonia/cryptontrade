@@ -17,10 +17,14 @@ class AccountsController < ApplicationController
   end
   def create
     @account = current_user.accounts.build(account_params)
+    @account.user_id = current_user.id
     if @account.save
+      user = User.find_by_id(@account.user_id)
+      account = @account
+      AccountMailer.account_email(user, account).deliver
       redirect_to root_path, notice: "Welcome To Your Trading Account Please Start Auto-Trade By Making A Deposit Now"
     else
-      render 'new'
+      render 'new', notice: "Please Try Again"
     end
   end
 

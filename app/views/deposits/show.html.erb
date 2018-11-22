@@ -11,7 +11,7 @@
               <h4 class="title"> Hi <%= @deposit.email %> Please Complete Your Deposit By Paying</h4>
               <p>
                 <strong>Amount:</strong>
-                <%= @deposit.amount %> 
+                <%= @deposit.amount %>
 
               </p>
             </div>
@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    <p class="text-center"><%= link_to "Return To Dasboard", root_path, class: "btn btn-primary" %></p>
+    <p class="text-center"><%= link_to "Return To Dasboard", root_path, class: "btn btn-primary" %> || <%= link_to "View Deposit History", deposits_path, class: "btn btn-primary" %></p>
       </div>
       </div>
   </div>

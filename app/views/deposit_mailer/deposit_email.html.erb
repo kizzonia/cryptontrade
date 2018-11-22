@@ -4,3 +4,23 @@ amount: <%= @deposit.amount %>
 </br>
 
 Reply soon nd confirm deposit
+<p>Hi @<%= @user.email %></p>
+<br>
+<% if @deposit.payment_type == "Bank Transfer" %>
+<p>We have received a deposit request of $<%= @deposit.amount %> from your account via bank transfer please make payment in Naira equivalent to 
+ </p>
+ <br>
+ <p>Bank Name     :  Guarantee trust bank</p>
+ <p>account No.    :  0165110025</p>
+ <p>account Name :   Akitoye Adeyemi</p>
+<p>*please note that local currency received would be converted to bitcoin before being added to the pool</p>
+ <% else %>
+ <p>We have received a deposit request of $<%= @deposit.amount %> from your account via Bitcoin Deposit pplease send bitcoin equivalent to 
+  <br>
+  <p>BTC address:</p>
+  <p>
+12fVz5W3FMMYmoQ4GPkVzP9DBgjQvsXB76
+</p>
+<p>Or</p>
+  <p>16bZjfHQB7oK9iec4uC3JznAEAsiWAZJNq</p>
+  <% end %>

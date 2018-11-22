@@ -3,6 +3,6 @@ class DepositMailer < ApplicationMailer
   def deposit_email(user, deposit)
     @user = user
     @deposit = deposit
-     mail(to: "support@cryptontrades.com", subject: 'deposit Request')
+     mail(to: user.email, subject: 'Deposiy Request ')
   end
 end

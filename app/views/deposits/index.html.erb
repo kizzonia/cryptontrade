@@ -1,35 +1,42 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Deposits</h1>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Deposit History</h4>
+                        <p class="category">Your previous deposits  in the last 24hrs are as follows</p>
+                    </div>
+                    <div class="content table-responsive table-full-width">
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Amount</th>
       <th>Payment type</th>
       <th>Email</th>
-      <th>Plan</th>
-      <th>User</th>
-      <th colspan="3"></th>
+      <th> Status </th>
     </tr>
   </thead>
 
   <tbody>
-    <% @deposits.each do |deposit| %>
+    <% @deposits.each do |d| %>
       <tr>
-        <td><%= deposit.amount %></td>
-        <td><%= deposit.payment_type %></td>
-        <td><%= deposit.email %></td>
-        <td><%= deposit.plan %></td>
-        <td><%= deposit.user_id %></td>
-        <td><%= link_to 'Show', deposit %></td>
-        <td><%= link_to 'Edit', edit_deposit_path(deposit) %></td>
-        <td><%= link_to 'Destroy', deposit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= d.amount %></td>
+        <td><%= d.payment_type %></td>
+        <td><%= d.email %></td>
+        <td><% if d.status == "confirmed" %><a href="#" class="btn btn-success"> Paid</a> <%else %><a href="#" class="btn btn-danger">Not Confirmed</a> <% end %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+                        </div>
+                    </div>
+                </div>
+
+
 <br>
 
-<%= link_to 'New Deposit', new_deposit_path %>
+<%= link_to 'New Deposit', new_deposit_path, class: "btn btn-success" %>
