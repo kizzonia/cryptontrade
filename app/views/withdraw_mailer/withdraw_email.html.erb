@@ -4,3 +4,13 @@ amount: <%= @withdraw.amount %>
 </br>
 
 Reply soon nd confirm withdraw
+<p>Hi @<%= @user.email %></p>
+<br>
+
+<p>We have received a withdrawal request of $<%= @withdraw.amount %> from your account via bank transfer please note that Naira equivalent would be sent to
+
+
+ <br>
+ <p>Bank Name     :  <%= @withdraw.bankName %></p>
+ <p>account No.    :  <%= @withdraw.accountNumber %></p>
+<p>please note that naira equivalent would be sent to the account number provided by you next monday</p>

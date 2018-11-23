@@ -1,33 +1,103 @@
-<p id="notice"><%= notice %></p>
+<div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 col-sm-6">
+            <div class="card">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="icon-big icon-success text-center">
+                                <i class="ti-wallet"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-7">
+                            <div class="numbers">
+                                <p>Withdrawal History</p>
+                                <%= Withdraw.where(user_id: current_user.id).count %>
 
-<h1>Withdraws</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Amount</th>
-      <th>Payment type</th>
-      <th>Email</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <hr />
+                        <div class="stats">
+                            <i class="ti-reload"></i> Updated now
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-sm-6">
+            <div class="card">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="icon-big icon-success text-center">
+                              <i class="ti-credit-card"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-7">
+                            <div class="numbers">
+                                <p>Request Funds</p>
+                                <%= link_to new_withdraw_path, class: "btn btn-primary" do %>
+                                   Make a withdraw
+                                   <%end%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <hr />
+                        <div class="stats">
+                            <i class="ti-pulse"></i> Start Trade Now
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  <tbody>
-    <% @withdraws.each do |withdraw| %>
+      </div>
+
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="header">
+                      <h4 class="title">withdraw History</h4>
+                      <p class="category">Your previous withdraws  in the last 24hrs are as follows</p>
+                  </div>
+                  <div class="content table-responsive table-full-width">
+
+      <table class="table table-striped">
+      <thead>
       <tr>
-        <td><%= withdraw.amount %></td>
-        <td><%= withdraw.payment_type %></td>
-        <td><%= withdraw.email %></td>
-        <td><%= withdraw.user %></td>
-        <td><%= link_to 'Show', withdraw %></td>
-        <td><%= link_to 'Edit', edit_withdraw_path(withdraw) %></td>
-        <td><%= link_to 'Destroy', withdraw, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <th>Amount</th>
+      <th>Payment Method</th>
+      <th>Email</th>
+      <th>Bank Name </th>
+      <th>Account Number</th>
+      <th> Status </th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<br>
+      <tbody>
+      <% @withdraws.each do |d| %>
+      <tr>
+      <td><%= d.amount %></td>
+      <td><%= d.payment_type %></td>
+      <td><%= d.email %></td>
+      <td><%= d.bankName %></td>
+      <td><%= d.accountNumber %></td>
+      <td><% if d.status == "confirmed" %><a href="#" class="btn btn-success"> Paid</a> <%else %><a href="#" class="btn btn-danger">Not Confirmed</a> <% end %></td>
+      </tr>
+      <% end %>
+      </tbody>
+      </table>
 
-<%= link_to 'New Withdraw', new_withdraw_path %>
+                      </div>
+                  </div>
+              </div>
+
+
+      <br>
+
+      <%= link_to 'New withdraw', new_withdraw_path, class: "btn btn-success" %>

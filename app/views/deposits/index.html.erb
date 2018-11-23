@@ -1,6 +1,63 @@
 
 <div class="content">
     <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 col-sm-6">
+            <div class="card">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="icon-big icon-success text-center">
+                                <i class="ti-wallet"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-7">
+                            <div class="numbers">
+                                <p>Deposit History</p>
+                                <%= Deposit.where(user_id: current_user.id).count %>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <hr />
+                        <div class="stats">
+                            <i class="ti-reload"></i> Updated now
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-sm-6">
+            <div class="card">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-5">
+                            <div class="icon-big icon-success text-center">
+                              <i class="ti-credit-card"></i>
+                            </div>
+                        </div>
+                        <div class="col-xs-7">
+                            <div class="numbers">
+                                <p>Credit Your Account</p>
+                                <%= link_to new_deposit_path, class: "btn btn-primary" do %>
+                                   Make a Deposit
+                                   <%end%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer">
+                        <hr />
+                        <div class="stats">
+                            <i class="ti-pulse"></i> Start Trade Now
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      </div>
         <div class="row">
             <div class="col-md-12">
                 <div class="card">

@@ -1,9 +1,4 @@
-Deposit request from  <%= @user.email %> deposit method:  <%= @deposit.payment_type %>, plan: <%= @deposit.plan %>
-amount: <%= @deposit.amount %>
 
-</br>
-
-Reply soon nd confirm deposit
 <p>Hi @<%= @user.email %></p>
 <br>
 <% if @deposit.payment_type == "Bank Transfer" %>

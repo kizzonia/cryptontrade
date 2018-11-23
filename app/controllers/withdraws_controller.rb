@@ -18,7 +18,7 @@ class WithdrawsController < InheritedResources::Base
     @withdraw = current_user.withdraws.build(withdraw_params)
     @withdraw.user_id = current_user.id
     respond_to do |format|
-      if @withdraw.save
+     if @withdraw.save
         user = User.find_by_id(@withdraw.user_id)
         withdraw = @withdraw
         WithdrawMailer.withdraw_email(user, withdraw).deliver
