@@ -75,7 +75,6 @@
       <th>Email</th>
       <th>Bank Name </th>
       <th>Account Number</th>
-      <th> Status </th>
       </tr>
       </thead>
 
@@ -87,7 +86,6 @@
       <td><%= d.email %></td>
       <td><%= d.bankName %></td>
       <td><%= d.accountNumber %></td>
-      <td><% if d.status == "confirmed" %><a href="#" class="btn btn-success"> Paid</a> <%else %><a href="#" class="btn btn-danger">Not Confirmed</a> <% end %></td>
       </tr>
       <% end %>
       </tbody>
