@@ -37,7 +37,7 @@ namespace :accounts do
     print "Account Balnce Updated..........."
   end
   desc "Contribution to pool"
-  task :ctp => environment do
+  task :ctp => :environment do
     @accounts = Account.all
     @pools = Pool.all
     @accounts.zip(@pools).each do |account, p|
@@ -47,9 +47,9 @@ namespace :accounts do
     end
     puts "Contribution to pool extra"
   end
-  
+
 desc "Gross Pl"
-task :gross_pl => environment do
+task :gross_pl => :environment do
   @accounts = Account.all
   @pools = Pool.all
   @accounts.zip(@pools).each do |account, p|
@@ -62,7 +62,7 @@ end
 
 
   desc "Net profit"
-  task :net_pl => environment do
+  task :net_pl => :environment do
     @accounts = Account.all
     @pools = Pool.all
     @accounts.zip(@pools).each do |account, p|
