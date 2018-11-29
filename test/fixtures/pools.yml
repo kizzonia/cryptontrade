@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  account: one
+  pool_ob: MyString
+  pool_cl: MyString
+  pool_pl: MyString
+  tob: MyString
+
+two:
+  account: two
+  pool_ob: MyString
+  pool_cl: MyString
+  pool_pl: MyString
+  tob: MyString

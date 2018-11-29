@@ -4,6 +4,10 @@
 
   <div class="form-inputs">
     <%= f.input :address, placeholder: "Your Bitcoin Address or Username " %>
+    <%= f.input :commission, placeholder: "please select commmission rate", as: :select, :collection => ["1.5", "3.5", "5", "10",
+    "15",
+    "20",
+    "25", "30", "35", "40", "45", "50", "55", "60", "65", "70", "75", "80", "85", "90" %>
   </div>
 
   <div class="form-actions">
