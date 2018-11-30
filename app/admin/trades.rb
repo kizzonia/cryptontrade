@@ -15,14 +15,18 @@ form do |f|
 
     f.inputs do
  f.input :user_id, :label => 'Users', :as => :select, :collection => User.all.map{|u| ["#{u.email}, #{u.first_name}", u.id]}
-      f.input :currency, :as => :select, :collection => ['USD', 'GB', 'AUD/USD', 'AUD/GB']
-      f.input :deposit
-      f.input :expiration
-      f.input :status, as: :select, :collection => ["WON", "LOSE"]
-      f.input :tradetype
-      f.input :entry
-      f.input :rate
-      f.input :return
+ f.input :capital
+ f.input :roi
+ f.input :balance
+ f.input :guranted
+ f.input :gross_pl
+ f.input :net_pl
+ f.input :ctp
+ f.input :closing_b
+ f.input :opening_b
+ f.input :profit_bf
+ f.input :commission
+
     end
     f.submit :submit
   end

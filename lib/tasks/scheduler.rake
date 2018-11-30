@@ -54,7 +54,7 @@ task :gross_pl => :environment do
   @pools = Pool.all
   @accounts.zip(@pools).each do |account, p|
    gt = account.ctp / 100
-   gp = gt * p.profit_pl
+   gp = gt * p.pool_pl
    account.update!(gross_pl: gp)
  end
  puts "Gross Profit calculated"
@@ -66,11 +66,37 @@ end
     @accounts = Account.all
     @pools = Pool.all
     @accounts.zip(@pools).each do |account, p|
-       nt = account.commission * @account.gross_pl
+       nt = account.commission * account.gross_pl
        nd = nt / 100
        net = account.gross_pl - nd
        account.update!(net_pl: net)
      end
+
+  end
+  desc "Trade History"
+  task :trade => :environment do
+  @accounts = Account.all.includes(:trades)
+    @accounts.each do |account|
+        account.trades.each do |trade|
+
+    a = account.capital
+      b = account.guranted
+      c = account.gross_pl
+      d = account.net_pl
+      e = account.roi
+    f = account.ctp
+      g = account.closing_b
+      h = account.opening_b
+      i = account.profit_bf
+      j = account.commission
+ puts a, b, c
+
+
+        trade.create(capital: a, guranted: b, gross_pl: c, net_pl: d, roi: e, ctp: f, closing_b: g, opening_b: h, profit_bf: i, commission: j)
+
+      end
+    end
+
 
   end
 

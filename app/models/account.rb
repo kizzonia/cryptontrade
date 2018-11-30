@@ -3,6 +3,7 @@ class Account < ApplicationRecord
   friendly_id :address, use: :slugged
 
   belongs_to :user
+  has_many :trades
   validates :user, presence: true
   validates :balance, presence: true
   validates :address, presence: true, uniqueness: true
@@ -11,6 +12,9 @@ class Account < ApplicationRecord
     if self.new_record?
       self.balance = 0.00
       self.ctp = 0.00
+      self.capital = 0.00
+      self.roi = 0.00
+      self.guranted = 0.00
       self.closing_b = 0.00
       self.opening_b = 0.00
       self.profit_bf = 0.00
