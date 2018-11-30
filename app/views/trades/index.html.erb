@@ -9,51 +9,44 @@
                     </div>
                     <div class="content table-responsive table-full-width">
                         <table class="table table-striped">
-                        
+
                             <thead>
                                 <tr>
-                                  <th>Entry Time</th>
-                                    <th>Currency</th>
-                                    <th>Amount Invested</th>
-                                    <th>Entry Rate </th>
-                                      <th>Created Date</th>
-                                          <th>Trade Type</th>
-                                            <th>Status</th>
-                                              <th>Returns</th>
+                                  <th>Capital</th>
+                                    <th>Gurantee</th>
+                                    <th>Rate Of Investment</th>
+                                    <th>Gross profit/loss</th>
+                                    <th>Net profit/loss </th>
+                                      <th>%Contribution to pool</th>
+                                          <th>Closing Balance</th>
+                                            <th>Opening Balance</th>
+                                              <th>Profit Brought Forward</th>
+                                              <th>Commission</th>
+                                              <th>Date</th>
 
 
 
                                 </tr>
                             </thead>
                             <tbody>
-                                    <% @trades.each do |b| %>
+                                    <% @trades.each do |t| %>
                                     <tr>
                                       <td>
-  <%= b.entry%>
+  <%= b.entry%>                         <%= t.capital %>
                                       </td>
+                                      <td><%=t.guranted%></td>
+                                      <td><%=t.roi%></td>
+                                      <td><%=t.gross_pl%></td>
+                                      <td><%=t.net_pl%></td>
+                                      <td><%=t.ctp%></td>
+                                      <td><%=t.closing_b%></td>
+                                      <td><%=t.opening_b%></td>
+                                      <td><%=t.profit_bf%></td>
+                                      <td><%=t.commission%></td>
                                       <td>
-                                        <%= b.currency %>
-                                      </td>
-                                      <td>
-                                        <%= b.deposit %>
+                                        <%=t.created_at.strftime("%d-%b-%Y") %>
                                       </td>
 
-                                      <td>
-                                        <%=b.rate %>
-                                      </td>
-                                      <td>
-                                        <%=b.created_at.strftime("%d-%b-%Y") %>
-                                      </td>
-                                      <td>
-                                        <%= b.tradetype %>
-                                      </td>
-                                      <td>
-                                        <%= b.status %>
-                                      </td>
-                                      <td>
-                                        <%= b.return%>
-                                      </td>
-                                    </tr>
                                     <% end %>
                                   </tbody>
                             </table>
