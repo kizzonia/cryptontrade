@@ -74,27 +74,27 @@ end
 
   end
   desc "Trade History"
-  task :trade => :environment do
+  task :trades => :environment do
   @accounts = Account.all.includes(:trades)
-    @accounts.each do |account|
-        account.trades.each do |trade|
+  @trades = Trade.all
+    @accounts.each do |a|
 
-    a = account.capital
-      b = account.guranted
-      c = account.gross_pl
-      d = account.net_pl
-      e = account.roi
-    f = account.ctp
-      g = account.closing_b
-      h = account.opening_b
-      i = account.profit_bf
-      j = account.commission
- puts a, b, c
-
-
-        trade.create(capital: a, guranted: b, gross_pl: c, net_pl: d, roi: e, ctp: f, closing_b: g, opening_b: h, profit_bf: i, commission: j)
-
-      end
+      values = {
+      capital: a.capital,
+        guranted: a.guranted,
+        gross_pl: a.gross_pl,
+        net_pl: a.net_pl,
+        roi: a.roi,
+    ctp: a.ctp,
+        closing_b: a.closing_b,
+        opening_b: a.opening_b,
+        profit_bf: a.profit_bf,
+        commission: a.commission
+        
+      }
+        puts values
+        a.trades.create(values)
+        puts "done"
     end
 
 

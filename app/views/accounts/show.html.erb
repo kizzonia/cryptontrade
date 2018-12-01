@@ -1,14 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Trade History</h4>
+                        <p class="category">Here are trade result in the last 24hrs</p>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-striped">
 
-<p>
-  <strong>Balance:</strong>
-  <%= @account.balance %>
-</p>
+                            <thead>
+                                <tr>
+                                  <th>Capital</th>
+                                    <th>Gurantee</th>
+                                    <th>Rate Of Investment</th>
+                                    <th>Gross profit/loss</th>
+                                    <th>Net profit/loss </th>
+                                      <th>%Contribution to pool</th>
+                                          <th>Closing Balance</th>
+                                            <th>Opening Balance</th>
+                                              <th>Profit Brought Forward</th>
+                                              <th>Commission</th>
+                                              <th>Date</th>
 
-<p>
-  <strong>User:</strong>
-  <%= @account.user_id %>
-</p>
 
-<%= link_to 'Edit', edit_account_path(@account) %> |
-<%= link_to 'Back', accounts_path %>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+<%= render @account.trades.reverse %>
+
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
