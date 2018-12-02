@@ -75,17 +75,20 @@
       <th>Email</th>
       <th>Bank Name </th>
       <th>Account Number</th>
+      <th>Status</th>
       </tr>
       </thead>
 
       <tbody>
       <% @withdraws.each do |d| %>
       <tr>
-      <td><%= d.amount %></td>
+      <td>$<%= d.amount %></td>
       <td><%= d.payment_method %></td>
       <td><%= d.email %></td>
       <td><%= d.bankName %></td>
       <td><%= d.accountNumber %></td>
+      <td><% if d.status? %><a href="#" class="btn btn-success"> Paid</a> <%else %><a href="#" class="btn btn-danger">Not Confirmed</a> <% end %></td>
+
       </tr>
       <% end %>
       </tbody>

@@ -3,6 +3,6 @@ class WithdrawMailer < ApplicationMailer
   def withdraw_email(user, withdraw)
     @user = user
     @withdraw = withdraw
-     mail(to: user.email, subject: 'withdraw Request')
+     mail(to: user.email, subject: 'Withdrawal Request')
   end
 end
