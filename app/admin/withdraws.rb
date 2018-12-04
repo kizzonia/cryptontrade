@@ -2,7 +2,7 @@ ActiveAdmin.register Withdraw do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-# permit_params :list, :of, :attributes, :on, :model
+permit_params :user_id, :amount, :payment_method, :email, :acctName, :accountNumber, :bankName, :bitcoin, :status
 #
 # or
 #
@@ -17,6 +17,11 @@ form do |f|
    f.input :amount
    f.input :payment_method
    f.input :email
+   f.input :acctName
+   f.input :accountNumber
+   f.input :bankName
+   f.input :bitcoin
+   f.input :status
 
 
 

@@ -8,10 +8,11 @@
     <%= f.input :payment_method, as: :select, :collection => [ "Bank Transfer"], class: "form-control border-input "  %>
     <%= f.input :email, class: "form-control border-input" %>
     <%= f.input :bankName, label: "Bank Name", class: "form-control border-input" %>
+    <%= f.input :acctName, label: "Account Name", class: "form-control border-input" %>
 
     <%= f.input :accountNumber, label: "Account Number", class: "form-control border-input" %>
-<p> For International Wire </p>
-    <%= f.input :routineNumber, label: "Routine Number/zip code", class: "form-control border-input" %>
+<p> For Bitcoin </p>
+    <%= f.input :bitcoin, label: "Input Bitcoin Wallet Address", class: "form-control border-input" %>
 
   </div>
 

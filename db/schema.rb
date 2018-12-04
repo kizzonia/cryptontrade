@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181130222134) do
+ActiveRecord::Schema.define(version: 20181204112739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -160,6 +160,8 @@ ActiveRecord::Schema.define(version: 20181130222134) do
     t.string "accountNumber"
     t.string "routineNumber"
     t.boolean "status"
+    t.string "acctName"
+    t.string "bitcoin"
     t.index ["user_id"], name: "index_withdraws_on_user_id"
   end
 
