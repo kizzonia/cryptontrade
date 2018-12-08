@@ -51,6 +51,6 @@ class AccountsController < ApplicationController
     end
   end
     def account_params
-      params.require(:account).permit(:balance, :address,  :user_id, :capital, :guranted, :gross_pl, :roi, :net_pl)
+      params.require(:account).permit(:balance, :address,  :user_id, :capital, :guranted, :gross_pl, :roi, :net_pl, :ctp, :closing_b, :opening_b, :profit_bf, :status, :understood )
     end
 end

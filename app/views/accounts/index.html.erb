@@ -62,9 +62,15 @@
                   <div class="content">
                       <div class="row">
                           <div class="col-xs-5">
+                            <% if a.status? %>
                               <div class="icon-big icon-danger text-center">
-                                  <i class="ti-anchor"></i>
+                                  <i class="ti-shortcode"></i>
                               </div>
+                               <%else %>
+                               <div class="icon-big icon-danger text-center">
+                                   <i class="ti-money"></i>
+                               </div>
+                               <%end%>
                           </div>
                           <div class="col-xs-7">
                               <div class="numbers">

@@ -1,17 +1,18 @@
 
 <%= simple_form_for(@account) do |f| %>
+
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :address, placeholder: "Your Bitcoin Address or Account No " %>
-    <%= f.input :guranted, placeholder: "please note that the %Guarantee affects your commision ", as: :select, :collection => [ "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60", "65", "70", "75", "80", "85", "90", "100"] %>
+    <%= f.input :guranted, label: "Percentage of Capital Guaranteed", placeholder: "please note that the %Guarantee affects your commision ", as: :select, :collection => [ "5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60", "65", "70", "75", "80", "85", "90", "100"] %>
 
   </div>
-  <div class="form-check">
-     <input type="checkbox" class="form-check-input" id="exampleCheck1">
-     <label class="form-check-label" for="exampleCheck1"><a href="https://docs.google.com/document/d/16xGHvKiwbcao2Yg4DivFm_CUeD_sOzIqhkreORVHYDo/edit?usp=sharing">I UNDERSTAND THE RISKS INVOLVED</a></label>
-   </div>
+
+
      <div class="form-actions">
+       <%= f.input :understood, as: :boolean, label: "I agree to the terms and conditons provided" %>
+
     <%= f.button :submit %>
   </div>
 <% end %>
