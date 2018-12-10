@@ -6,7 +6,7 @@ permit_params :user_id, :amount, :payment_method, :email, :acctName, :accountNum
 #
 # or
 #
-permit_params :amount, :payment_method, :email, :user_id
+
 #
 # or
 #
